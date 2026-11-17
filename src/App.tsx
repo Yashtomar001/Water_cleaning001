@@ -9,6 +9,7 @@ import { Analytics } from '@/components/Analytics';
 import { Learn } from '@/components/Learn';
 import { AuthPage } from '@/components/AuthPage';
 import { AuthProvider, useAuth } from '@/lib/auth';
+import { LiveDataProvider } from '@/lib/liveData';
 import { fetchActiveAlerts } from '@/lib/dataAccess';
 import { Spinner } from '@/components/ui';
 
@@ -92,7 +93,9 @@ function AppContent() {
 function App() {
   return (
     <AuthProvider>
-      <AppContent />
+      <LiveDataProvider>
+        <AppContent />
+      </LiveDataProvider>
     </AuthProvider>
   );
 }

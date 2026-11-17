@@ -1,0 +1,3 @@
+[functions.live-sensor-feed]
+verify_jwt = false
+entrypoint = "./functions/live-sensor-feed/index.ts"

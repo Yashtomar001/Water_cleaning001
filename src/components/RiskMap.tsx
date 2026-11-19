@@ -139,9 +139,13 @@ export function RiskMap() {
       const radius = radiusFor(lake);
       const pred = lake.latest_prediction;
 
+      const lat = Number(lake.lat);
+      const lng = Number(lake.lng);
+      if (Number.isNaN(lat) || Number.isNaN(lng)) return;
+
       const circle = new google.maps.Circle({
         map: mapRef.current!,
-        center: { lat: lake.lat, lng: lake.lng },
+        center: { lat, lng },
         radius: radius,
         strokeColor: color,
         strokeWeight: 2,
@@ -152,7 +156,7 @@ export function RiskMap() {
 
       circle.addListener('click', () => {
         setSelected(lake);
-        mapRef.current?.panTo({ lat: lake.lat, lng: lake.lng });
+        mapRef.current?.panTo({ lat, lng });
         mapRef.current?.setZoom(8);
 
         const predHtml = pred ? `
@@ -185,7 +189,7 @@ export function RiskMap() {
             ${predHtml}
           </div>
         `);
-        infoWindow.setPosition({ lat: lake.lat, lng: lake.lng });
+        infoWindow.setPosition({ lat, lng });
         infoWindow.open(mapRef.current!);
       });
 

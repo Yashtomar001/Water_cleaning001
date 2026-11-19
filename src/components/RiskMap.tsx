@@ -96,6 +96,9 @@ export function RiskMap() {
           locationButton.addEventListener('click', () => handleLocate());
 
           mapRef.current.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+
+          // Trigger resize in case the container wasn't fully sized at init
+          google.maps.event.trigger(mapRef.current, 'resize');
         }
 
         // Render markers

@@ -1,7 +1,7 @@
-import { Waves, AlertTriangle, Map, BarChart3, FlaskConical, Database, LayoutDashboard, BookOpen, LogOut, User as UserIcon } from 'lucide-react';
+import { Waves, AlertTriangle, Radio, BarChart3, FlaskConical, Database, LayoutDashboard, BookOpen, LogOut, User as UserIcon } from 'lucide-react';
 import { useAuth } from '@/lib/auth';
 
-export type ViewKey = 'dashboard' | 'map' | 'lakes' | 'prediction' | 'alerts' | 'analytics' | 'learn';
+export type ViewKey = 'dashboard' | 'feed' | 'lakes' | 'prediction' | 'alerts' | 'analytics' | 'learn';
 
 export interface NavItem {
   key: ViewKey;
@@ -11,7 +11,7 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   { key: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { key: 'map', label: 'Risk Map', icon: Map },
+  { key: 'feed', label: 'Sensor Feed', icon: Radio },
   { key: 'lakes', label: 'Lake Explorer', icon: Database },
   { key: 'prediction', label: 'Prediction Lab', icon: FlaskConical },
   { key: 'alerts', label: 'Early Warnings', icon: AlertTriangle },

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Sidebar, MobileNav, type ViewKey } from '@/components/Sidebar';
 import { Dashboard } from '@/components/Dashboard';
-import { RiskMap } from '@/components/RiskMap';
+import { SensorFeed } from '@/components/SensorFeed';
 import { LakeExplorer } from '@/components/LakeExplorer';
 import { PredictionLab } from '@/components/PredictionLab';
 import { EarlyWarnings } from '@/components/EarlyWarnings';
@@ -76,7 +76,7 @@ function AppContent() {
 
         <main className="p-4 md:p-6 lg:p-8 max-w-7xl mx-auto">
           {view === 'dashboard' && <Dashboard onNavigate={handleNavigate} />}
-          {view === 'map' && <RiskMap />}
+          {view === 'feed' && <SensorFeed />}
           {view === 'lakes' && <LakeExplorer />}
           {view === 'prediction' && <PredictionLab />}
           {view === 'alerts' && <EarlyWarnings onNavigate={handleNavigate} />}

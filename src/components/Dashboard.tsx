@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react';
-import { Droplets, Eye, AlertTriangle, Siren, Activity, Waves, TrendingUp, ShieldAlert } from 'lucide-react';
+import { Droplets, Eye, AlertTriangle, Siren, Activity, Waves, Radio, ShieldAlert } from 'lucide-react';
 import { fetchDashboardStats } from '@/lib/dataAccess';
 import { useLiveData } from '@/lib/liveData';
 import { LiveStatusBar } from './LiveStatusBar';
@@ -81,8 +81,8 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: ViewKey) => void }) 
             Real-time sensor data, satellite imagery analysis, and spatial risk mapping for aquatic ecosystem management.
           </p>
           <div className="flex flex-wrap gap-3 mt-5">
-            <button onClick={() => onNavigate('map')} className="btn bg-primary-500 text-white hover:bg-primary-400">
-              <TrendingUp className="w-4 h-4" /> View Risk Map
+            <button onClick={() => onNavigate('feed')} className="btn bg-primary-500 text-white hover:bg-primary-400">
+              <Radio className="w-4 h-4" /> View Sensor Feed
             </button>
             <button onClick={() => onNavigate('alerts')} className="btn bg-white/10 backdrop-blur text-white hover:bg-white/20 border border-white/20">
               <AlertTriangle className="w-4 h-4" /> {activeAlertCount} Active Alerts
